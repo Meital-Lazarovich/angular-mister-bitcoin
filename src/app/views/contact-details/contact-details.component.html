@@ -1,0 +1,16 @@
+<section class="contact-details container" *ngIf="contact">
+    <div class="nav flex space-between align-center">
+        <a (click)="goBack()" class="back hover-link">Back</a>
+        <!-- <Link class="link-edit hover-link" to={`/contact/edit/${contact._id}`}>Edit Contact Details</Link> -->
+    </div>
+    <div class="flex info space-between align-center">
+        <img class="contact-img" src="{{contact.img}}" alt="" />
+        <div>
+            <h3>Name: {{contact.name}}</h3>
+            <h3>Phone: {{contact.phone}}</h3>
+            <h3>Email: {{contact.email}}</h3>
+        </div>
+    </div>
+    <!-- <TransferFund contact={contact} addMove={this.addMove} updateAmount={this.updateAmount} /> -->
+    <!-- <MoveList moves={movesToContact} title={'Your Moves'} /> -->
+</section>
