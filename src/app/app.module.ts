@@ -9,7 +9,7 @@ import { ContactService } from './services/contact/contact.service';
 import { ContactListComponent } from './cmps/contact-list/contact-list.component';
 import { ContactPreviewComponent } from './cmps/contact-preview/contact-preview.component';
 import { ContactDetailsComponent } from './views/contact-details/contact-details.component';
-import { ContactEditComponent } from './contact-edit/contact-edit.component';
+import { ContactEditComponent } from './views/contact-edit/contact-edit.component';
 
 @NgModule({
   declarations: [

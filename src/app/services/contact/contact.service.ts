@@ -7,26 +7,74 @@ import { of } from 'rxjs';
 export class ContactService {
 
   constructor() { }
+
   getContacts(filterBy = null) {
     var contactsToReturn = contacts;
     if (filterBy && filterBy.term) {
-      contactsToReturn = filter(filterBy.term)
+      contactsToReturn = _filter(filterBy.term)
     }
     return of(contactsToReturn)
   }
+
   getContactById(id) {
       const contact = contacts.find(contact => contact._id === id)
       return of(contact)
   }
+  
+  removeContact(id) {
+      const index = contacts.findIndex( contact => contact._id === id)
+      if (index !== -1) {
+        contacts.splice(index, 1)
+      }
+      return of(contacts);
+  }
+  
+  getEmptyContact() {
+    return of({
+      name: '',
+      email: '',
+      phone: ''
+    })
+  }
+
+  saveContact(contact) {
+    return contact._id ? this._updateContact(contact) : this._addContact(contact)
+  }
+
+  _updateContact(contact) {
+      const index = contacts.findIndex( c => contact._id === c._id)
+      if (index !== -1) {
+        contacts[index] = contact
+      }
+      return of(contact);
+  }
+  
+  _addContact(contact) {
+      contact._id = _makeId()
+      const gender = (Math.random() > 0.5) ? 'men' : 'women'
+      contact.img = `https://randomuser.me/api/portraits/${gender}/${contacts.length+1}.jpg`
+      contacts.push(contact)
+      return of(contact);
+  }
+  
 }
 
-function filter(term) {
+function _filter(term) {
   term = term.toLocaleLowerCase()
   return contacts.filter(contact => {
     return contact.name.toLocaleLowerCase().includes(term) ||
       contact.phone.toLocaleLowerCase().includes(term) ||
       contact.email.toLocaleLowerCase().includes(term)
   })
+}
+
+function _makeId(length = 10) {
+  var txt = ''
+  var possible = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'
+  for (var i = 0; i < length; i++) {
+    txt += possible.charAt(Math.floor(Math.random() * possible.length))
+  }
+  return txt
 }
 
 

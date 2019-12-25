@@ -1,7 +1,7 @@
 <section class="contact-details container" *ngIf="contact">
     <div class="nav flex space-between align-center">
         <a (click)="goBack()" class="back hover-link">Back</a>
-        <!-- <Link class="link-edit hover-link" to={`/contact/edit/${contact._id}`}>Edit Contact Details</Link> -->
+        <a routerLink="/contact/edit/{{contact._id}}" class="link-edit hover-link">Edit Contact Details</a>
     </div>
     <div class="flex info space-between align-center">
         <img class="contact-img" src="{{contact.img}}" alt="" />

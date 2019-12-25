@@ -7,7 +7,8 @@ import { ContactService } from 'src/app/services/contact/contact.service';
   styleUrls: ['./contact-page.component.scss']
 })
 export class ContactPageComponent implements OnInit {
-  contacts;
+  contacts: any = [];
+
   constructor(private contactService: ContactService) { }
 
   ngOnInit() {

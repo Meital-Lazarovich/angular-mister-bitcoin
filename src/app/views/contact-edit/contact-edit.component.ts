@@ -2,19 +2,21 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 import { ContactService } from 'src/app/services/contact/contact.service';
+import { Router } from '@angular/router';
 
 @Component({
-  selector: 'contact-details',
-  templateUrl: './contact-details.component.html',
-  styleUrls: ['./contact-details.component.scss']
+  selector: 'contact-edit',
+  templateUrl: './contact-edit.component.html',
+  styleUrls: ['./contact-edit.component.scss']
 })
-export class ContactDetailsComponent implements OnInit {
+export class ContactEditComponent implements OnInit {
   contact: any = {};
 
   constructor(
     private contactService: ContactService,
     private route: ActivatedRoute,
-    private location: Location
+    private location: Location,
+    private router: Router
   ) { }
 
   ngOnInit() {
@@ -30,4 +32,8 @@ export class ContactDetailsComponent implements OnInit {
     this.location.back();
   }
 
+  removeContact() {
+    this.contactService.removeContact(this.contact._id)
+      .subscribe(() => this.router.navigateByUrl('/contact'))
+  }
 }

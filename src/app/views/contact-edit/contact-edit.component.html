@@ -1,0 +1,7 @@
+<section class="contact-edit container" *ngIf="contact">
+    <div class="actions flex space-between align-center">
+        <div (click)="goBack()" class="back hover-link">Back</div>
+        <div (click)="removeContact()" class="hover-link">Delete This Contact</div>
+    </div>
+    <h1>{{contact.name}}</h1>
+</section>
