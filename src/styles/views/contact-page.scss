@@ -16,8 +16,11 @@
         .contact-preview {
             margin: 15px 20px;
             width: 230px;
-            h4 {
-                color: $clr4;
+            .info {
+                margin-left: 12px;
+                h4 {
+                    color: $clr4;
+                }
             }
         }
     }

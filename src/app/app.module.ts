@@ -10,6 +10,11 @@ import { ContactListComponent } from './cmps/contact-list/contact-list.component
 import { ContactPreviewComponent } from './cmps/contact-preview/contact-preview.component';
 import { ContactDetailsComponent } from './views/contact-details/contact-details.component';
 import { ContactEditComponent } from './views/contact-edit/contact-edit.component';
+import { FormsModule } from '@angular/forms';
+import { HeaderComponent } from './cmps/header/header.component';
+import { UserService } from './services/user/user.service';
+import { StorageService } from './services/storage/storage.service';
+import { SignupPageComponent } from './views/signup-page/signup-page.component';
 
 @NgModule({
   declarations: [
@@ -20,12 +25,19 @@ import { ContactEditComponent } from './views/contact-edit/contact-edit.componen
     ContactPreviewComponent,
     ContactDetailsComponent,
     ContactEditComponent,
+    HeaderComponent,
+    SignupPageComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
-  providers: [ContactService],
+  providers: [
+    ContactService,
+    UserService,
+    StorageService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

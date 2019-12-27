@@ -21,6 +21,7 @@ export class ContactEditComponent implements OnInit {
 
   ngOnInit() {
     this.route.params.subscribe(params => {
+      if (!params.id) return this.contact = this.contactService.getEmptyContact()
       this.contactService.getContactById(params.id)
         .subscribe(contact => {
           this.contact = contact
@@ -35,5 +36,10 @@ export class ContactEditComponent implements OnInit {
   removeContact() {
     this.contactService.removeContact(this.contact._id)
       .subscribe(() => this.router.navigateByUrl('/contact'))
+  }
+
+  saveContact() {
+    this.contactService.saveContact(this.contact)
+      .subscribe(contact => this.goBack())
   }
 }

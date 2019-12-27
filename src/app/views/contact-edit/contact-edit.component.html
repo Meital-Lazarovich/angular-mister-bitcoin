@@ -1,7 +1,18 @@
 <section class="contact-edit container" *ngIf="contact">
     <div class="actions flex space-between align-center">
         <div (click)="goBack()" class="back hover-link">Back</div>
-        <div (click)="removeContact()" class="hover-link">Delete This Contact</div>
+        <div *ngIf="contact._id" (click)="removeContact()" class="hover-link">Delete This Contact</div>
     </div>
-    <h1>{{contact.name}}</h1>
+    <form (ngSubmit)="saveContact()" class="flex-center column">
+        <label> Name:
+            <input type="text" [(ngModel)]="contact.name" name="name" />
+        </label>
+        <label> Phone:
+            <input type="text" [(ngModel)]="contact.phone" name="phone" />
+        </label>
+        <label> Email:
+            <input type="email" [(ngModel)]="contact.email" name="email" />
+        </label>
+        <button type="submit">Done</button>
+    </form>
 </section>

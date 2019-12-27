@@ -7,7 +7,7 @@ import { ContactService } from 'src/app/services/contact/contact.service';
   styleUrls: ['./contact-page.component.scss']
 })
 export class ContactPageComponent implements OnInit {
-  contacts: any = [];
+  contacts: Array<Object> = [];
 
   constructor(private contactService: ContactService) { }
 

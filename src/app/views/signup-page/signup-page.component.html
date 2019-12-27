@@ -1,0 +1,7 @@
+<section class="signup-page container flex align-center column">
+    <h3>Please type your name to continue</h3>
+    <form (ngSubmit)="signup()">
+        <input type="text" [(ngModel)]="userName" name="name" />
+        <button type="submit">Submit</button>
+    </form>
+</section>
