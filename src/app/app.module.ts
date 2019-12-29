@@ -15,6 +15,8 @@ import { HeaderComponent } from './cmps/header/header.component';
 import { UserService } from './services/user/user.service';
 import { StorageService } from './services/storage/storage.service';
 import { SignupPageComponent } from './views/signup-page/signup-page.component';
+import { BitcoinService } from './services/bitcoin/bitcoin.service';
+import {HttpClientModule} from '@angular/common/http'
 
 @NgModule({
   declarations: [
@@ -31,12 +33,14 @@ import { SignupPageComponent } from './views/signup-page/signup-page.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [
     ContactService,
     UserService,
-    StorageService
+    StorageService,
+    BitcoinService
   ],
   bootstrap: [AppComponent]
 })

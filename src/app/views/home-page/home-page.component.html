@@ -3,5 +3,6 @@
     <div class="info">
         <h2>Current Balance:</h2>
         <h3>BIT : <span class="bit">₿ {{user.coins}}</span></h3>
+        <h3 *ngIf="usd">USD : <span class="usd">$ {{usd}}</span></h3>
     </div>
 </section>
