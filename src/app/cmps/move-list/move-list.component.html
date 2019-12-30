@@ -1,6 +1,6 @@
 <section *ngIf="moves && moves.length;else noMoves" class="move-list">
     <h1 class="bold">{{title}}</h1>
-    <move-preview *ngFor="let move of moves" [move]="move"></move-preview>
+    <move-preview *ngFor="let move of moves" [move]="move" [showTo]="showTo"></move-preview>
 </section>
 <ng-template #noMoves>
     <section class="no-moves">

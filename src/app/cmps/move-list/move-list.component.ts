@@ -9,6 +9,7 @@ export class MoveListComponent implements OnInit {
 
   @Input() moves;
   @Input() title;
+  @Input() showTo = false;
 
   constructor() { }
 

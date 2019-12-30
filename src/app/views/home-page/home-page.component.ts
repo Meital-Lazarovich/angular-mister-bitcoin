@@ -33,4 +33,8 @@ export class HomePageComponent implements OnInit {
     if (this.rate) return (this.user.coins / this.rate).toFixed(3)
     return undefined
   }
+
+  get movesToShow() {
+    return this.user.moves.slice(0, 3);
+  }
 }

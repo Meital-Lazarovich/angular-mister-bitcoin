@@ -5,4 +5,5 @@
         <h3>BIT : <span class="bit">₿ {{user.coins}}</span></h3>
         <h3 *ngIf="usd">USD : <span class="usd">$ {{usd}}</span></h3>
     </div>
+    <move-list [title]="'Your Last Moves'" [moves]="movesToShow" [showTo]="true"></move-list>
 </section>

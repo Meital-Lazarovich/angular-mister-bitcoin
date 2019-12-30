@@ -8,6 +8,7 @@ import { Component, Input } from '@angular/core';
 export class MovePreviewComponent {
 
   @Input() move;
+  @Input() showTo = false;
 
   constructor() { }
 
