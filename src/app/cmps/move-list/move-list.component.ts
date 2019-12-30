@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'move-list',
@@ -6,6 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./move-list.component.scss']
 })
 export class MoveListComponent implements OnInit {
+
+  @Input() moves;
+  @Input() title;
 
   constructor() { }
 

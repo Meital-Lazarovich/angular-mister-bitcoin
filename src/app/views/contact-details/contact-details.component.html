@@ -12,5 +12,5 @@
         </div>
     </div>
     <transfer-fund [contact]="contact" (addMove)="addMove($event)" ></transfer-fund>
-    <!-- <MoveList moves={movesToContact} title={'Your Moves'} /> -->
+    <move-list [moves]="movesToContact" [title]="'Your Moves'" ></move-list>
 </section>
