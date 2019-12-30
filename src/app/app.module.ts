@@ -16,7 +16,10 @@ import { UserService } from './services/user/user.service';
 import { StorageService } from './services/storage/storage.service';
 import { SignupPageComponent } from './views/signup-page/signup-page.component';
 import { BitcoinService } from './services/bitcoin/bitcoin.service';
-import {HttpClientModule} from '@angular/common/http'
+import {HttpClientModule} from '@angular/common/http';
+import { TransferFundComponent } from './cmps/transfer-fund/transfer-fund.component';
+import { MoveListComponent } from './cmps/move-list/move-list.component';
+import { MovePreviewComponent } from './cmps/move-preview/move-preview.component'
 
 @NgModule({
   declarations: [
@@ -29,6 +32,9 @@ import {HttpClientModule} from '@angular/common/http'
     ContactEditComponent,
     HeaderComponent,
     SignupPageComponent,
+    TransferFundComponent,
+    MoveListComponent,
+    MovePreviewComponent,
   ],
   imports: [
     BrowserModule,

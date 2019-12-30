@@ -11,6 +11,6 @@
             <h3>Email: {{contact.email}}</h3>
         </div>
     </div>
-    <!-- <TransferFund contact={contact} addMove={this.addMove} updateAmount={this.updateAmount} /> -->
+    <transfer-fund [contact]="contact" (addMove)="addMove($event)" ></transfer-fund>
     <!-- <MoveList moves={movesToContact} title={'Your Moves'} /> -->
 </section>

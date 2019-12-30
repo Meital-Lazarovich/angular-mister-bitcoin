@@ -1,0 +1,7 @@
+<section class="transfer-fund">
+    <h2 class="text-center">Transfer coins to {{contact.name}}:</h2>
+    <form (ngSubmit)="addMove()" class="flex-center">
+        <div>Amount: <input type="number" min="1" [(ngModel)]="amount" name="amount" /></div>
+        <button type="submit">Transfer</button>
+    </form>
+</section>
